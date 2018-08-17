@@ -1,0 +1,122 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = it_IT
+% !TEX root = main.tex
+\chapter{Turbolenza: introduzione a questo strano e complesso fenomeno}
+Turbolenza, un fenomeno che siamo abituati ad osservare quotidianamente in natura ma che la matematica difficilmente domina al momento. E' meraviglioso come possa essere complicato descrivere con equazioni situazioni che siamo soliti dare per scontate. Chi direbbe mai che non siamo in grado di comprendere pienamente il perchè l'acqua che esce dal rubinetto si muove in quel modo, oppure perchè l'aria si distribuisca in modo particolare attorno al profilo alare di un aereo... ;)
+
+In questo articolo, faremo un breve viaggio alla scoperta del concetto di turbolenza, analizzando i risultati ai quali la ricerca è riuscita ad arrivare al momento e le domande ancora aperte. Non voglio che diventi un articolo noioso, ma essendo uno degli articoli più applicativi che ho scritto fino ad ora ho intenzione di presentarti molti esempi e immagini :) Inoltre ti avviso già che è un articolo lungo, però per introdurre la turbolenza con un minimo di completezza e matematica è stato necessario...
+
+La turbolenza è attualmente uno dei più grandi problemi fisici ancora aperti ed irrisolti. E' strettamente legata alla complessità delle equazioni che regolano la dinamica dei fluidi (di Navier-Stokes), uno dei problemi del millennio. Se non sai di cosa sto parlando, dai una letta all'articolo che aveva scritto Erik sui Problemi del millennio al Capitolo \ref{ch:millenium_problems}.
+
+Magari ci concentreremo un'altra volta su queste equazioni. Per ora mi interessa evidenziare solamente il fatto che sono \textit{equazioni differenziali alle derivate parziali} (PDE) fortemente \emph{non lineari}. Sono un sistema misto di equazioni iperboliche e paraboliche e la caoticità delle loro soluzioni è la motivazione alla base del comportamento turbolento delle correnti.
+
+Le precedenti 4-5 righe, sono dedicate a chi la matematica la mastica abbastanza bene. 
+\footnote{Se hai capito poco o niente non preoccuparti, non è questo il centro dell'articolo che stai leggendo ;)}
+Alcune definizioni
+
+Per parlare di argomenti così complessi è chiaramente necessaria una terminologia specifica. Cercando di non appesantire troppo la lettura, ho quindi deciso di dedicare un piccolo paragrafo all'introduzione di alcuni nomi e concetti che ci saranno poi utili.
+
+\begin{defn}[Fluido]
+	Una sostanza in grado di reagire a delle "forze" (non è del tutto corretto, in realtà si deve parlare di sforzi ma se non sai cosa siano è lo stesso, basta che passi l'idea) perpendicolari alla superficie da essa individuata e di deformarsi indefinitamente se sottoposta a forze tangenziali esterne.
+\end{defn}
+
+\begin{defn}[Densità]
+	E' una caratteristica del fluido, essa è una funzione continua dello spazio e del tempo (sotto le opportune ipotesi che non approfondiremo) che rappresenta il rapporto tra la quantità di massa di fluido contenuta in un volume infinitesimo e il volume stesso:
+	\[\rho=\lim_{\Delta V\to 0}\frac{M}{\Delta V} \]
+\end{defn}
+ 
+\begin{defn}[Viscosità]
+	Si dice viscosità la resistenza che gli strati di fluido pongono allo scorrere l'uno sull'altro, intuitivamente è legata allo scambio di quantità di moto tra i vari elementi di fluido.
+\end{defn}
+
+\begin{defn}[Corrente]
+	Un regime di moto associato ad un particolare fluido, completamente descritto dalla terna pressione, densità e campo di velocità. E' importante specificare che le proprietà che sono associabili alle correnti valgono per ogni fluido che è caratterizzato da quel regime di moto particolare. In seguito parleremo infatti di corrente turbolenta e non di fluido turbolento.
+\end{defn}
+ 
+\begin{defn}[Grandezza caratteristica]
+	In fisica spesso si cerca di lavorare con numeri e quantità a-dimensionali, per astrarre il più possibile l'analisi (e per motivi strettamente numerici). Per ricondurci a delle equazioni a-dimensionali si ricorre alla divisione delle funzioni in gioco per delle grandezze caratteristiche del moto o della geometria che si sta analizzando. Per esempio se stiamo analizzando la corrente in un fiume, possiamo identificare come lunghezza caratteristica l'ampiezza media del fiume. Oppure se dobbiamo lavorare con delle velocità, possiamo a-dimensionalizzarle dividendole per la velocità media della corrente (che può essere trattata come una velocità caratteristica).
+\end{defn} 
+
+Una volta introdotti questi concetti fondamentali, addentriamoci nel vivo della turbolenza partendo dall'esperimento classico condotto da Reynolds per evidenziare la transizione tra un regime di corrente laminare (ordinato) e turbolento (caotico).
+
+\section{L'esperimento di Reynolds}
+
+Quest'esperienza ha l'obiettivo di mostrare come, al variare delle condizioni di una corrente, vari anche il comportamento di un sottile "filo" di colorante introdotto nel condotto che ospita il fluido in moto. Nel video qui sotto puoi vedere come si svolge l'esperimento ;)
+
+
+Senza analizzarlo troppo, si vede (ed è anche spiegato nel video) che a velocità della corrente sufficientemente basse, il filamento di colorante introdotto nel condotto si muove con regolarità ed ordine in un moto rettilineo. Appena la velocità della corrente cresce, il moto si trasforma in moto caotico, disordinato, variabile ed oscillante nel tempo. Chi l'avrebbe mai detto che un semplice aumento di velocità potesse causare un casino del genere?! ;)
+
+Detto ciò, questo comportamento è esattamente ciò che puoi osservare quando apri il rubinetto dell'acqua. Se ne fai uscire poca alla volta, da esso uscirà un sottile filamento lineare d'acqua, se aumenti la pressione del rubinetto diventerà un getto molto più irregolare e oscillante nella forma.
+
+\section{Turbolenza}
+
+Per me è stato molto strano scoprire di questa diverso comportamento in funzione della velocità della corrente, infatti sono cose a cui purtroppo siamo abituati e di cui non ci poniamo spesso domande.
+
+Ma quindi che caratteristiche ha questo nuovo tipo di corrente che sembra molto più piena e strana? Nel prossimo paragrafo citerò alcune tra le principali proprietà del moto turbolento, evidenziandone alcuni esempi evidenti nella realtà. Spero ti piaccia come approccio al fenomeno ;)
+Alcune proprietà della turbolenza
+
+Il moto turbolento della corrente è caratterizzato da:
+
+Tridimensionalità: A differenza del moto laminare che si verifica nel caso del rubinetto che fa uscire un filino d'acqua, non è possibile descrivere il moto che si presenta aumentando la pressione del rubinetto come una corrente parallela. E' evidente che vanno coinvolte 3 dimensioni per descrivere il caos generato dalle linee di corrente dell'acqua e dalle molecole che si urtano molto frequentemente creando delle traiettorie irregolari e quasi imprevedibili.
+
+Vorticità: Nelle equazioni che regolano la vorticità (che è il rotore della velocità) dopo una breve analisi si può ricavare che nel caso di corrente tridimensionale si ha una vorticità che varia lungo le linee di corrente, autoalimentandosi e ripartendosi lungo le varie direzioni a causa delle variazioni di velocità della corrente stessa. La vorticità si dimostra visivamente come la rotazione degli elementi di fluido (insiemi di molecole, o anche individuabili come blocchetti di fludo) su se stessi, ed evidentemete questo aspetto si verifica nell'esperimento visto in precedenza con il colorante. Infatti il filamento lineare ed ordinato che si vede all'inizio poi va a rimescolarsi, a riempire il condotto e a ruotare su se stesso.
+
+Un altro esempio in cui la presenza della vorticità è molto chiara, sono le correnti dei fiumi che devono passare sotto un ponte. Quando le linee di corrente incontrano un palo di sostegno del ponte, si separano in modo caotico, e le porzioni d'acqua iniziano a ruotare su se stesse, creando una situazione molto confusionaria e burrascosa.
+
+La turbolenza è una proprietà multiscala: Un forte ruolo nella ricerca sulla turbolenza e la sua molteplicità di scale è dovuto a Kolmogorov, grande matematico a cui vengono dedicate anche le cosiddette scale di Kolmogorov, ovvero i fenomeni turbolenti sulle microscale. Ma cosa si intende per molteplicità di scale?
+
+Semplicemente la turbolenza non si esplicita allo stesso modo se valutata su spazi molto piccoli (lunghezze caratteristiche ridotte) o su macroscale quali potrebbero essere le analisi fatte sulle lunghezze caratteristiche tipiche del fiume stesso. In particolare, si può notare una cascata energetica a carico della viscosità (che può essere vista come un insieme di forze interne che portano a dissipare energia fino a raggiungere la stabilità) che trasforma i vortici delle macroscale (molto instabili perchè di grandi dimensioni), nei vortici di dimensioni molto ridotte più stabili. A questo punto l'energia rimasta dopo la dissipazione nei vortici stabili, si disperde in calore.
+
+Quindi i vortici delle correnti turbolente non sono solo quelli che vediamo ma c'è molto di più! Questo è uno dei motivi principali per cui l'analisi del regime turbolento delle correnti è molto complicato. Esso infatti non può essere trattato nei rispetti della sua natura seguendo un approccio completamente statistico, basato su medie nel tempo, altrimenti si supporrebbe che ad ogni scala di ingrandimento il fenomeno si esplicita allo stesso modo.
+
+Turbolenza
+
+Non abbiamo tempo e modo di approfondire un approccio statistico alla turbolenza mediante le equazioni mediate di Reynolds (RANS), seppur molto interessante e utilizzato a livello ingegneristico. Tuttavia ti basti sapere che trascura molti aspetti della fisica del fenomeno, però è funzionale per valutare le dinamiche turbolente in quanto permette di ottenere risultati significativi in tempi ragionevoli (a differenza della risoluzione numerica diretta delle equazioni della turbolenza che richiederebbero tempi esorbitanti per lavorare efficacemente).
+
+Apparente casualità: Come ogni fenomeno caotico che si rispetti, non stiamo parlando di un fenomeno stocastico e completamente imprevedibile, ma la turbolenza soffre di una forte sensitività ai dati iniziali. Cosa vuol dire? Beh, semplicemente che se noi proviamo a riprodurre l'evoluzione della corrente turbolenta due volte consecutive con condizioni molto simili tra loro, potremmo avere sviluppi completamente diversi. L'unico modo che abbiamo per essere certi di due sviluppi coincidenti sarebbe rimettere al loro posto tutte le molecole dell'universo nel momento della sua origine ;)
+
+Un esempio molto semplice e visivo di questa sensitività ai dati iniziali tipico delle dinamiche caotiche è il pendolo doppio, la cui lieve variazione del punto di partenza del pendolo causa evoluzioni completamente diverse, come puoi vedere dal video qui sotto:
+
+
+
+Potrei elencare altre proprietà, come la dissipazione energetica o l'instazionarietà, ma siccome immagino che ormai ti stai stufando perchè l'articolo è lungo, preferisco passare a riaccendere un po' gli animi proponendoti alcuni esempi, citando il problema da un milione di dollari ad essa legato e dicendo il perchè sia fondamentale il progresso della ricerca matematica in questo campo :)
+Un milione di dollari e perchè provarci
+
+Come già detto nelle righe precedenti, accanto alla comprensione della turbolenza, si hanno dei problemi matematici molto grossi, dovuti alla valutazione dell'esistenza o meno di soluzioni delle equazioni di Navier-Stokes per particolari flussi e particolari ipotesi.
+
+Ecco quindi citato testualmente il problema la cui risoluzione porterebbbe a farti guadagnare un milione di dollari ;)
+
+Turbolenza
+
+Ovvero:
+
+Data una condizione iniziale v0 = v(x,0), campo vettoriale nello spazio euclideo, esiste una funzione vettoriale per la velocità v(x,t) e una funzione di pressione p(x,t) che soddisfa le equazioni di Navier-Stokes? Esiste una soluzione se v0 è liscia?
+
+A parte questo spunto e stimolo, mi fa piacere condividere alcuni dei motivi per cui è importante spingere la ricerca in questi campi.
+
+Una maggiore comprensione del fenomeno della turbolenza avrebbe notevoli ricadute tecnologiche ed economiche. Si pensi, ad esempio, al risparmio che si avrebbe se si potesse mantenere laminare (ordinata e regolare) la corrente attorno ad un aereo che vola per dodici ore considerato che la metà del peso al decollo è dato dal carburante. Infatti la transizione che avviene ad alte velocità da moto laminare a turbolento causa una resistenza d'attrito molto più grande dell'area al "fluire" dell'aereo, richiedendo così maggior carburante per gestire l'intero volo.
+
+Turbolenza
+
+Tra i numerosi settori tecnologici in cui compare la turbolenza ricordiamo i processi di combustione, i condotti per il trasporto di gas/petrolio, le scie dietro ai mezzi di trasporto, il comportamento del sangue in arterie/vene (emodinamica), lo studio di aneurismi celebrali, la diffusione di spray ed aerosol.
+
+Insomma, i campi che richiedono un avanzamento degli studi sulla turbolenza sono molti, ecco perchè ritenevo utile provare a scrivere questo articolo, sapendo però che è un rischio dato che non è un argomento semplice e facile da descrivere con poca matematica (ho però cercato di usarla poco, se non niente per questo primo articolo).
+Alcuni esempi visivi
+
+Questa sezione ho deciso di svilupparla usando poche parole scritte e proponendoti molti video che secondo me rendono molto di più, soprattutto per farti un'idea e contestualizzare tutto ciò che hai letto fino ad ora :)
+
+Flusso laminare e flusso turboleento in un fiume
+
+Evoluzione strato limite turbolento attorno a lamina piana
+
+Riferimenti per approfondimenti
+
+Come mi è stato consigliato da alcuni di voi, d'ora in poi inizierò ad aggiungere in coda agli articoli alcune risorse per approfondire ciò che si è solamente introdotto nelle righe precedenti. Potrebbero essere libri di testo, libri divulgativi, pdf , video o articoli, dipenderà dal tema e dalle risorse che considero più valide.
+
+Qui di seguito trovi alcuni articoli che trattano l'importanza del problema della turbolenza da un punto di vista fisico e matematico. I primi due sono anche molto rilevanti, a parer mio, perchè il primo spiega il perchè la turbolenza sia ancora un problema matematico aperto e il secondo ne fornisce una comprensione fisica più completa.
+
+Why global regularity for Navier-Stokes is hard
+On the nature of turbolence
+Un testo sulla dinamica dei fluidi : Fluid Dynamics
+
+Spero di non averti annoiato troppo, ti ringrazio se sei arrivato a leggere fin qui e spero di sentire qualche tuo parere riguardo questa tematica e l'articolo ;)

@@ -1,0 +1,116 @@
+% !TeX encoding = UTF-8
+\chapter{Numeri complessi: cosa sono, perchè sono importanti e prime proprietà}
+
+Numeri complessi, che saranno mai? Sono numeri complicati? Beh, il nome non è certo dovuto a quest'ultimo fatto, però ovviamente comportano alcune complicazioni rispetto ai numeri reali (ma anche molte possibilità in più :) ).
+
+
+Chiaramente non sono riuscito a comprimere in un articolo (moderatamente lungo) tutto ciò che c'è da sapere sui numeri complessi. Fra qualche giorno pubblicherò la seconda parte.
+
+\section{Introduzione ai numeri complessi}
+
+Partiamo con una definizione, che può però dire tutto e niente:
+
+\begin{mydef}
+	Chiamiamo numero complesso ogni coppia ordinata $ (a,b) $ di numeri reali.
+\end{mydef}
+
+Intuitivamente possiamo quindi vedere ogni punto sul piano cartesiano come numero complesso. Questa è solo una delle modalità con cui questa "classe" di numeri possono essere rappresentati.
+Ovviamente, come ogni buona definizione di "oggetto" matematico, essa permette di eseguire operazioni tra "oggetti" simili. Siano per esempio date le coppie $ (2,3) $ e $ (3,7) $.
+
+Possiamo quindi introdurre il concetto di somma tra numeri complessi (nella forma di coppia ordinata) come somma componente per componente:
+\[(2,3) + (3,7) = (5,10). \] 
+Abbastanza semplice, no?
+
+Qualche complicazione in più la si può incontrare nell'eseguire la moltiplicazione con questa notazione, vedremo poi delle rappresentazioni dei complessi che agevolano di molto questo calcolo.
+
+In generale, date due coppie ordinate $ (a,b) $ e $ (a',b') $ si ha che
+
+\[(a,b) \times (a',b') = (a\times a'-b\times b' , a\times b'+b\times a').\] Eccoti un esempio per chiarire un pelo questo concetto:
+
+\[(2,3) \times (1,2) = (2*1-3*2, 2*2+3*1) = (-4, 7)\]
+
+Perfetto, una volta viste queste prime definizioni e operazioni, spero che ti sia sorta almeno una delle seguenti domande:
+\begin{itemize}
+	\item Ma a cosa servono i numeri complessi? Mi sono sempre bastati i numeri reali..
+	\item Ma i numeri complessi sono in qualche relazione con i numeri reali?
+	\item Mi permettono di risolvere problemi nuovi?
+	\item Tutto ciò che vale per gli altri numeri, vale anche per i complessi?
+\end{itemize}
+Non pretendo certo di rispondere a tutte queste domande, però almeno in parte sono sicuro che verrai soddisfatto. 
+Partiamo quindi dal principio: Perchè è stato necessario "inventarsi" i numeri complessi?
+
+\section{Utilità dei numeri complessi}
+Il motivo basilare principale è la risoluzione di equazioni del tipo $ x^2+1=0 $. Ragionando in termini di soluzioni reali, siamo sempre (giustamente) stati abituati ad affermare che tale equazione sia priva di soluzioni. Il grafico della parabola $ x^2+1 $ sta infatti sempre ben sopra l'asse delle $ x $, non intersecandolo mai.
+
+Nel campo dei numeri complessi, invece, tale equazione ha \emph{due} soluzioni. Esse sono $ (0,1) $ e $ (0,-1) $. Vedremo meglio in seguito il perchè di tali risultati. Prima è opportuno introdurre (o rinfrescare) il teorema fondamentale dell'algebra:
+
+\begin{thm}[Teorema Fondamentale dell'algebra]
+	Ogni polinomio di grado $ n>0 $ (cioè non costante), a coefficienti reali o complessi del tipo:
+	\begin{equation}
+	a_{n}z^{n}+\ldots +a_{1}z+a_{0}
+	\end{equation}
+	ammette almeno una radice complessa o zero.
+\end{thm} 
+Dal teorema segue che il polinomio ammette precisamente n radici complesse contate con la loro molteplicità, mentre ammette al massimo $ n $ radici reali.
+
+In parole povere, ogni equazione di grado $ n>0 $, ha esattamente $ n $ radici. Esse possono essere complesse o reali. Vediamo un semplice esempio:
+\begin{exmpl}
+	$ x^3-1 = (x-1)(x^2 + x + 1) $. Essa ha chiaramente la radice reale $ x=1 $, mentre l'altro fattore in cui l'ho scomposta non ha radici reali dato che il discriminante è $ D $, con $ D = 1 - 4 = -3<0 $. Pertanto, vista la validità del teorema fondamentale dell'algebra, l'equazione qui sopra ha 1 radice reale e 2 complesse.
+\end{exmpl}
+Quindi l'utilità primaria dei numeri complessi è che ci permettono di trovare tutte e sole le soluzioni di un equazione di grado $ n>0 $.
+\section{Numeri reali e numeri immaginari}
+C'è qualche relazione tra numeri reali e numeri immaginari? Beh, certamente. Infatti vedendo le varie classi di numeri come insiemi, possiamo definire la seguente relazione di inclusione: $ \N \subset \Z \subset \Q \subset \R \subset \C $ . Dove tali lettere simboleggiano rispettivamente i numeri naturali, interi, razionali, reali e complessi.
+
+Si può quindi chiaramente vedere che i numeri reali, sono dei particolari numeri complessi. In particolare, tutte le coppie ordinate nella forma $ (a, 0) $ con $ a\in \R $ sono corrispondenti al numero reale $ a $. Si noti infatti che tutte le operazioni tra numeri reali, come siamo abituati a vederli fin dalle medie, rimangono vere anche con le definizioni (viste al paragrafo precedente) di somma e moltiplicazione tra numeri complessi. Infatti date le coppie ordinate $ (a,0) $ e $ (b,0) $ si a che:
+\begin{itemize}
+	\item (a,0) + (b,0) = (a+b,0) esattamente come fare a+b dato che (a+b,0) è ad esso corrispondente
+	\item $ (a,0) \times (b,0) = (a*b - 0*0, a*0 + b*0) = (ab,0) $ esattamente come fare a*b dato che (ab,0 ) è ad esso corrispondente.
+	\item In contrapposizione ai numeri reali, ci sono i \emph{numeri immaginari}. Essi vengono solitamente definiti come numeri complessi del tipo $ (0,b) $ con $ b\in\R $.
+	\item In particolare si definisce \emph{unità immaginaria } e la si caratterizza con il simbolo $ i $ il numero immaginario $ (0,1) $. Esso sarà fondamentale per esprimere i numeri complessi in forma algebrica.
+\end{itemize}
+
+Prima di passare oltre, ci tengo a mostrarti un calcolo molto semplice ma parecchio interessante. Facendo infatti $ i \times i = i^2 = (0,1)*(0,1) =(0*0-1*1,0*1 + 0*1) = (-1,0) = -1 $
+
+Vedi quindi chiaramente che elevando al quadrato un numero, si ottiene un numero negativo. Parecchio strano se sei abituato a ragionare nel campo dei numeri reali, no? Infatti come ti avevo anticipato qualche riga più in su, $ i $ è una delle soluzioni dell'equazione $ x^2+1=0 $, dato che $ i^2 = -1 $ si ha che $ i^2+1=0 $ . E infatti $ i = (0,1) $ ;)
+
+\section{La forma algebrica dei numeri complessi}
+All'inizio, ci eravamo occupati di definire i numeri complessi come coppia ordinata. Da un punto di vista geometrico, tale rappresentazione è molto intuitiva. Non è però equivalentemente comoda da un punto di vista pratico della risoluzione di operazioni tra complessi. Introduciamo quindi la seconda forma in cui si possono esprimere i numeri complessi: \textbf{la forma algebrica}. Dato il numero complesso $ (a,b) $, la sua forma algebrica è semplicemente espressa come segue: $ a+bi $.
+
+Infatti ricordato che $ i=(0,1) $, sia ha che $ a = a*(1,0) = (a,0) $ e $ b $ analogamente.
+Quindi $ a+bi=(a,0) + (b,0)*(0,1) = (a,0) + (0,b) = (a,b) $.
+
+Se per un momento chiamassimo $ n = a+bi $ , potremmo definire la parte reale di $ n $ il coefficiente $ a $ (si indica con $ \Re(n)=a $) e la sua parte immaginaria è il coefficiente $ b $ ($ \Im(n)=b $).
+Bene, ti avevo detto che questa nuova modalità di esprimere i complessi era comoda per la facilità nei calcoli, giusto?
+Infatti è vero, i numeri complessi possono essere sommati e moltiplicati in maniera molto naturale. Si può considerare la i come fosse una costante qualsiasi. L'unico accorgimento da avere è che la potenza dell'unità immaginaria non è proprio così immediata.
+
+Ecco qui come calcolare le potenze n-sime dell'unità immaginaria:
+
+potenze unità immaginaria
+
+Quindi occhio a quando vai a moltiplicare numeri complessi tra loro in forma algebrica ;)
+
+Ecco qui qualche esempio:
+\[(5+2i) + (3+8i) = (5+3)+i(2+8) = 8 + 10i\]
+\begin{align*}
+	(5+2i)*(3+8i) = (5*3 + 5*8i + 2i*3 + 2i*8i ) = \\
+	(15 + 40i + 6i +16(i*i))=(15 + 46i -16) = 46i - 1.
+\end{align*}
+Ho cercato di fare tutti i passaggi così da chiarirti un po' il meccanismo, basta farne un paio per comprendere bene come funziona ;)
+\section{Confrontare numeri complessi}
+Le cose introduttive relative ai numeri complessi penso di averle già dette nei paragrafi precedenti, a breve pubblicherò il seguito di questo articolo con alcuni concetti e risultati più interessanti ma leggermente meno semplici.
+
+Prima di concludere, però, ci tengo ad introdurre una relazione d'ordine sui numeri complessi. Penso infatti che tu sappia già decidere se un numero naturale è più grande, più piccolo o equivalente ad un altro.
+Bene, si può fare qualcosa di simile anche per i numeri complessi.
+
+Dato infatti il numero $ z_1=a+bi $, definiamo modulo il numero reale positivo che si ottiene dall'operazione che segue:
+\[\sqrt{a^2 + b^2}= \lvert z_1\rvert.
+\]
+Ora, dato un secondo complesso $ z_2=c+di  $, diciamo intuitivamente che $ z_2 $ è "più grande" di $ z_1 $, ossia $ z_2\geq z_1 $ se e solo se $ |z_2|\geq|z_1| $.
+
+Se hai seguito con attenzione il percorso che ti ho fatto fare in questo articolo e sei a conoscenza delle nozioni base della geometria, penso che ti sia reso conto che $ |z_1| $ non descrive altro che la distanza del punto $ z_1=(a,b) $ dall'origine degli assi.
+
+Infatti la distanza di un generico punto $ (a,b) $ del piano, rispetto all'origine, è esattamente $ \sqrt{a^2+b^2}$(teorema di Pitagora).
+
+Prima di chiudere, un ultimo concetto: dato $ z=a+bi  $, si dice complesso coniugato di $ z $, il numero $ \bar{z} = a-bi $ , che talvolta è indicato anche con $ z^{*} $.
+
+Per il momento è tutto, al prossimo articolo ;) 

@@ -3,6 +3,15 @@
 \usepackage[italian]{babel}
 \usepackage{microtype}
 
+\usepackage[square,numbers,sectionbib]{natbib}
+\usepackage{chapterbib}
+
+\PassOptionsToPackage{pdftex}{graphicx}
+\usepackage{graphicx} 
+\graphicspath{{Images/}{}}
+\usepackage[outdir=./]{epstopdf}
+
+
 % Golden ratio proportions on crown quarto with marginpar inside
 \usepackage[includemp,
 	paperwidth=18.90cm,
@@ -13,7 +22,6 @@
 	outer=2.1835cm,
 	marginparwidth=4cm, % Fixed for now
 	marginparsep=0.4cm]{geometry}
-
 
 % For full bleed printing on crown quarto with 1/8 inch trim margin
 % \usepackage[includemp,
@@ -49,8 +57,9 @@
 \usepackage{kpfonts}
 \usepackage{amsmath,amssymb}        % AMS symbols and environments
 \usepackage{mathtools}              % More math symbols and environments
+\usepackage{amsthm}
 
-\usepackage[hypcap=true]{caption}   % Correctly placed anchors for hyperlinks
+\usepackage[hypcap=true,format=plain]{caption}   % Correctly placed anchors for hyperlinks
 \usepackage{floatrow}               % Set up captions of floats
 \usepackage{marginfix}              % Make marginpars float freely
 \usepackage{metalogo}               % XeTeX logo

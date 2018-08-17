@@ -1,0 +1,134 @@
+% !TeX encoding = UTF-8
+% !TeX spellcheck = it_IT
+\chapter{Come fa Netflix a consigliarti proprio ciò che ti piace?}
+Recommendation system, che sarà mai? Ormai tutte le piattaforme digitali lo utilizzano in maniera più o meno evidente, tuttavia spesso non si sa cosa sia e come funzioni.
+
+\section{Introduzione}
+
+Partiamo da qualche situazione pratica, ti sarà infatti già capitato di andare su Netflix o su Amazon e trovarti voci del tipo "Consigliati per \emph{te}..", oppure "Guarda \emph{questo} visto che hai già visto quello". Altre modalità con cui vengono effettuate le raccomandazioni sono nella forma "Molti che hanno comprato X hanno comprato Y", tipici soprattutto di Amazon.
+
+E tu ogni volta ti chiedi, ma come è possibile che sappiano così bene i miei gusti? Quando mi consigliano delle cose, mi piacciono veramente. Come fanno? 
+
+Beh, dietro a questo sistema di raccomandazioni ci sono algoritmi molto complessi, perfezionati nel tempo e che apprendono mano a mano che tu utilizzi le piattaforme su cui sono implementati.
+
+Sì, infatti ti sarai reso conto che affinchè inizino a consigliarti prodotti che effettivamente ti piacciono, è necessario che tu utilizzi la loro piattaforma per un certo tempo.
+
+Si tratta di Machine Learning, una delle tematiche più interessanti del momento.
+
+Vediamo cos'ha da dirci Wikipedia in merito a questo Machine Learning:
+% QUESTO PARAGRAFO VA PERFEZIONATO CON UN BLOCCO APPOSTA
+\emph{L’apprendimento automatico (anche chiamato machine learning dall'inglese), rappresenta un insieme di metodi sviluppati negli ultimi decenni in varie comunità scientifiche con diversi nomi come: statistica computazionale, riconoscimento di pattern, reti neurali artificiali, filtraggio adattivo, teoria dei sistemi dinamici, elaborazione delle immagini, data mining, algoritmi adattivi, ecc; che "fornisce ai computer l'abilità di apprendere senza essere stati esplicitamente programmati".}
+
+Inizia a farsi un po' più di chiarezza? Praticamente alla base di Netflix, Amazon e tanti altri servizi ci sono algoritmi che tengono traccia delle tue azioni e, comparandole con quelle degli altri utenti, apprendono i tuoi gusti e sono sempre più in grado, mano a mano che utilizzi la loro piattaforma, di consigliarti con precisione.
+
+E' spettacolare se ci pensi, quasi come un tuo amico quando ti consiglia di iniziare una nuova serie TV, sapendo che hai già visto "How I Met Your Mother" e ti è piaciuto, per esempio :)
+
+La differenza è che chi te lo sta consigliando non è un umano, quindi ci sembra impossibile.
+
+Ma vediamo di andare oltre le apparenze, analizzando come la matematica abbia un ruolo fondamentale in questa fase di previsione ed interpretazione delle preferenze personali 
+
+\section{I due tipi di recommendation system}
+
+Fin'ora ci siamo occupati di scoprire dove e come veniamo a contatto con questo recommendation system. Vediamo però in che modalità agisce questo sistema e come facciano, senza addentrarci troppo nei dettagli, a scoprire i nostri gusti.
+
+Innanzitutto ti sarai reso conto che i sistemi di raccomandazione si possono dividere in due tipologie, che basano i loro studi su due differenti soggetti:
+\begin{itemize}
+	\item sulle tue precedenti azioni e preferenze (magari voti che hai dato a determinati prodotti, o anche solo prodotti che hai visto).
+	\item sulle preferenze di "clienti" simili a te in termini di gusti.
+\end{itemize}
+Nella prima classe di algoritmi, si basa tutto sul tenere traccia dei tuoi click, dei tuoi commenti, delle tue votazioni o anche del tempo che hai trascorso su un determinato prodotto/video. In base a ciò, vengono stilate delle classifiche di ciò che più ti è piaciuto, delle caratteristiche di questi prodotti, dei loro prezzi e di altre loro qualità.
+
+In parallelo gli algoritmi possono accedere alla lista di tutti gli altri prodotti, con relative caratteristiche e pareri degli utenti, consigliandoti quelli più affini alle tue preferenze fin'ora registrate.
+
+Facciamo un esempio molto semplice. Tu hai comprato un libro di matematica, diciamo per esempio "L'ultimo teorema di Fermat" su Amazon.
+
+Che cos'hai fatto quindi scoprire ad Amazon? Beh, molte cose di te. Ovviamente si suppone che la tua scelta sia stata coerente con i tuoi gusti, trascuriamo per il momento il caso che tu lo stia comprando per fare un regalo, in cui la situazione si complicherebbe (infatti questi non sarebbero i tuoi gusti, ma quelli di un tuo amico ;) ).
+
+Che cosa sa Amazon di te dopo questo acquisto? Probabilmente ti piace la matematica, ti piace leggere, ti piace informarti sui grandi teoremi e matematici della storia. Non dimenticare inoltre che Amazon ha tracciato anche i tuoi click prima di acquistare questo libro, quindi probabilmente ha visto che eri indeciso tra questo e altri libri di divulgazione matematica. Il che non fa che rafforzare le sue conoscenze appena acquisite.
+
+Ovviamente qui sto banalizzando notevolmente il processo di riconoscimento delle preferenze, trascurando completamente che per effettuare delle previsioni sia necessario un campione statistico ben più ampio di un singolo acquisto/visita ad una pagina. Ma per il momento ritengo sia sufficiente, mi interessa chiarire i meccanismi che superficialmente regolano questi sistemi.
+
+Per andare oltre c'è sempre tempo ;)
+
+Ah, ma se provi a guardare la pagina di vendita del libro (ti basta cliccare sul titolo del libro poche righe più in su), noterai che ti compare anche la seguente voce:
+
+\textbf{"Quali altri articoli acquistano i clienti, dopo aver visualizzato questo articolo?".}
+
+Sotto a tale titolo, troverai una lista di 3-4 libri affini a quello che stai acquistando. Eccoci alla seconda tipologia di recommendation system. Quello basato sugli interessi di utenti che, in passato, hanno dimostrato di essere simili a te in termini di preferenze.
+
+Alla base del meccanismo basato sulla combinazione delle preferenze di tutti gli utenti, vi è un utilizzo massivo di matrici, matrici di enormi dimensioni! Per velocizzare i calcoli e le analisi, gli elaboratori utilizzano strumenti quali la riduzione in valori singolari (SVD) o altre procedure, così da trascurare alcune righe e colonne approssimando le matrici a delle matrici più semplici.
+
+Se sei interessato a questa tematica, potresti iniziare da qualche video su Youtube e poi informarti su Google, magari più avanti troverai qualcosa anche su questo sito ;)
+
+% I LINK DI SEGUITO LI HO TOLTI PERCHÈ NEL PDF NON SI VEDONO
+%Ecco qui un paio di video interessanti, sono in inglese ma molto comprensibili:
+
+%Scomposizione in valori singolari (SVD) : Link
+
+%L'algebra del Pagerank di Google: Link
+
+Vediamo, ai fini pratici, come vengono utilizzate le matrici in questa analisi delle preferenze. Per farlo, utilizzerò un esempio semplificato della realtà.
+
+L'esempio sarà inerente a Netflix. Supponiamo di avere solo 4 utenti iscritti e 3 serie TV. Supponiamo inoltre che non tutti e 4 abbiano visto tutte le 3 Serie TV. Ci poniamo l'obiettivo di scoprire se gli utenti potrebbero essere interessati a guardare le Serie mancanti, se potrebbero essere affini ai loro gusti.
+
+Per semplicità supponiamo che ogni utente abbia assegnato una votazione dall'1 al 5 ad ogni Serie TV che ha guardato, in base alle sue preferenze.
+
+Ovviamente questa casistica è super-semplificata, nonostante ciò dovremo usare una matrice 4x3 per analizzarla. Immagina le dimensioni delle matrici con cui Amazon e Netflix hanno effettivamente a che fare quotidianamente ;)
+
+Registriamo quindi sulle righe i 4 utenti, sulle colonne le serie TV. Nelle varie entrate della nostra matrice, andremo a mettere le votazioni assegnate dagli utenti (se ti interessa scoprire qualcosa in più sulle matrici, ecco qui un'articolo che avevo scritto qualche tempo fa: Le matrici: cosa sono e qualche importante utilizzo ).
+
+Ovviamente saranno presenti delle entrate vuote, visto che ogni utente non ha visto almeno una Serie TV di quelle disponibili.
+
+Sulla base della somiglianza delle preferenze tra utenti, vorremmo prevedere che voto darebbero gli utenti mancanti alle Serie TV che non hanno ancora visto, così da sapere se potrebbero piacere loro o no.
+
+
+\begin{marginfigure}%
+	\includegraphics[width=\linewidth]{preferenze.png}
+	\caption{Ecco quella che potrebbe essere una matrice delle preferenze.}
+	\label{fig:preferenze}
+\end{marginfigure}
+
+
+Ora proviamo  ad analizzare la semplice tabella \ref{fig:preferenze}, che escludendo la prima riga e colonna diventa una bellissima "matrice delle preferenze".
+Potrebbe interessare Luca la serie TV "Tredici"? Beh, dura a dirsi dato che a lui è piaciuto "Narcos", differentemente dagli altri che l'hanno visto. Tuttavia è concorde agli altri rispetto a "Sherlock", dobbiamo quindi capire a quale di queste due, la Serie TV che deve ancora vedere, è più affine. Diciamo che l'esempio non è dei migliori :)
+Però probabilmente a Luca non piacerebbe vedere "Tredici" dato che Sara ha detto che le piace moltissimo, mentra ha votato con un misero '2' "Narcos", che invece piaceva a Luca.
+
+Ovviamente questa analisi non è per niente consistente a livello statistico e degna di un'intelligenza artificiale, ma è un ragionamento che, se basato su un campione di Serie TV e utenti molto più vasto, può essere molto efficace.
+
+Per questa introduzione, un po' approssimativa, alle due tipologie di recommentation system utilizzate attualmente, penso sia sufficiente. Vediamo, giusto per curiosità, nel prossimo paragrafo come si è arrivati all'algoritmo attuale di Netflix e alcuni riferimenti autorevoli nel caso tu voglia approfondire, cosa che ti consiglio vivamente (ricordati che questa è la direzione verso cui stiamo andando, intelligenza artificiale e machine learning sono il futuro ;) ).
+
+\section{Netflix prize e alcuni riferimenti autorevoli}
+
+Alle origini, Netflix basava i suoi affari sul noleggio di DVD e videogiochi prenotabili online ma inviati in seguito a casa. Già al tempo vi era una bozza di sistema di raccomandazioni, basato su alcuni algoritmi più semplici degli attuali, basato semplicemente sulle loro preferenze passate.
+
+Il miglioramento di queste infrastrutture vede il picco nel momento in cui Netflix si è lanciata nel mondo dello streming online, in quanto in questo contesto la raccolta dei dati era molto più immediata e inconsapevolmente gli utenti inviavano molte più informazioni. Ora non solo potevano accedere allo storico dei film noleggiati, ma ogni singolo click è tracciabile!
+
+Nel 2006 l'azienda ha lanciato un concorso, avente 1 milione di dollari in premio, per chi ofsse riuscito a rendere più preciso il recommendations system utilizzato fino a quell'anno, rendendo così il potenziale dell'azienda molto superiore (rendendola più "umana").
+
+In termini matematici, loro avevano l'obiettivo di diminuire l'errore commesso consigliando un determinato film ad un dato utente. Questa è l'unica formuletta dell'articolo, ma la ritengo utile:
+
+\begin{equation}
+\label{eq:RMSE}
+\text{RMSE}=\sqrt{\sum_{1}^{N}\frac{(\text{voto reale}-\text{voto predetto})^2}{N}}
+\end{equation}
+
+L'RMSE è una metrica utilizzata spesso per valutare l'efficacia dei metodi predditivi, in caso non ti interessi approfondire, ti basti sapere che è un indice di accuratezza dell'algoritmo.
+
+Tra le proposte più innovative ci fu quella del team BellKor’s Pragmatic Chaos, che nel 2009 si aggiudicò il premio con un cocktail letale di 107 algoritmi e oltre 2000 ore di lavoro.
+\subsection*{Riferimenti autorevoli per eventuali approfondimenti:}
+\textbf{Libri}:
+Learning from Data: Link
+The Elements of Statistical Learning: Data Mining, Inference, and Prediction: Link
+Hands-On Machine Learning: Link
+
+\textbf{Risorse}:
+
+Informazioni sull'algoritmo vincente e sul Netflix Prize: Link
+Interessante corso "Master Recommender Systems": Link
+Creazione guidata Recommendation System con Python: Link
+Video introduttivo ai Recommendation Systems: Link
+Recommendation System, lezione sul Machine Learning: Link
+Machine Learning: cos'è e perchè è importante: Link
+The Netflix Recommender System: Algorithms, Business Value, and Innovation: Link
+
+

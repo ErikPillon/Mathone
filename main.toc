@@ -1,0 +1,56 @@
+\select@language {italian}
+\select@language {italian}
+\gdef \the@ipfilectr {@-1}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-2}
+\contentsline {chapter}{\numberline {1}Gauss - Il principe dei Matematici}{5}{chapter.1}
+\contentsline {section}{\numberline {1.1}L'enfant prodige}{5}{section.1.1}
+\contentsline {section}{\numberline {1.2}L'annus aureus}{6}{section.1.2}
+\contentsline {section}{\numberline {1.3}La maturit\IeC {\`a}}{7}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Astronomia}{8}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Probabilit\IeC {\`a}}{8}{subsection.1.3.2}
+\contentsline {subsection}{\numberline {1.3.3}Geodetiche e Geometrie non euclidee}{8}{subsection.1.3.3}
+\contentsline {subsection}{\numberline {1.3.4}Elettromagnetismo}{9}{subsection.1.3.4}
+\contentsline {subsection}{\numberline {1.3.5}Curiosit\IeC {\`a}}{9}{subsection.1.3.5}
+\contentsline {section}{\numberline {1.4}Morte e eredit\IeC {\`a}}{9}{section.1.4}
+\contentsline {chapter}{\nonumberline Bibliografia}{10}{chapter*.5}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-3}
+\contentsline {chapter}{\numberline {2}Galois - Il Genio che non aveva tempo}{11}{chapter.2}
+\contentsline {section}{\numberline {2.1}\IeC {\'E}variste Galois - Il profeta}{11}{section.2.1}
+\contentsline {section}{\numberline {2.2}Una vita appassionata}{11}{section.2.2}
+\contentsline {section}{\numberline {2.3}Un matematico incompreso}{12}{section.2.3}
+\contentsline {section}{\numberline {2.4}Il matematico romantico}{12}{section.2.4}
+\contentsline {section}{\numberline {2.5}Uno spirito passionale}{13}{section.2.5}
+\contentsline {section}{\numberline {2.6}La teoria di Galois}{14}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Il concetto di Gruppo}{14}{subsection.2.6.1}
+\contentsline {section}{\numberline {2.7}Il matematico che non aveva tempo}{15}{section.2.7}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-4}
+\contentsline {chapter}{\numberline {3}I 7 ponti di Konigsberg}{16}{chapter.3}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-5}
+\contentsline {chapter}{\numberline {4}Il Nobel per la Matematica}{20}{chapter.4}
+\contentsline {section}{\numberline {4.1}Nobel per la matematica}{20}{section.4.1}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-6}
+\contentsline {chapter}{\numberline {5}Cos'\IeC {\`e} un algoritmo? Definizione e qualche esempio}{22}{chapter.5}
+\contentsline {section}{\numberline {5.1}Introduzione ed esempi pratici}{22}{section.5.1}
+\contentsline {section}{\numberline {5.2}Definizione pi\IeC {\`u} rigorosa del concetto di \textit {algoritmo}}{23}{section.5.2}
+\contentsline {section}{\numberline {5.3}Alcuni algoritmi interessanti da approfondire}{25}{section.5.3}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-7}
+\contentsline {chapter}{\numberline {6}Turbolenza: introduzione a questo strano e complesso fenomeno}{27}{chapter.6}
+\contentsline {section}{\numberline {6.1}L'esperimento di Reynolds}{28}{section.6.1}
+\contentsline {section}{\numberline {6.2}Turbolenza}{29}{section.6.2}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-8}
+\contentsline {chapter}{\numberline {7}Problemi del Millennio}{33}{chapter.7}
+\gdef \the@ipfilectr {}
+\gdef \the@ipfilectr {@-9}
+\contentsline {chapter}{\numberline {8}C\IeC {\'e}dric Villani: il teorema vivente}{34}{chapter.8}
+\contentsline {section}{\numberline {8.1}Biografia}{34}{section.8.1}
+\contentsline {section}{\numberline {8.2}Vita privata e celebrit\IeC {\`a}}{34}{section.8.2}
+\contentsline {section}{\numberline {8.3}Il sogno della \IeC {\guillemotleft }citt\IeC {\`a} della scienza\IeC {\guillemotright }}{35}{section.8.3}
+\gdef \the@ipfilectr {}
+\contentsline {chapter}{\nonumberline Bibliografia}{36}{chapter*.13}

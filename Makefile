@@ -3,10 +3,9 @@ title = main
 chapters = Chapters/*.tex
 #bibliography = bibliography.bib
 config = Config/*.tex
-fbMatter = FrontBackMatter/*.tex
+fbMatter = Front-Back_Matter/*.tex
 Im = Images/*
-ImL = /home/erik/Bureau/Tesi/Matlab/Im/*.eps
-ImgCreator = /home/erik/Bureau/Tesi/Matlab/diagonalize.m /home/erik/Bureau/Tesi/Matlab/dispersion_relation.m 
+ImL = /home/erik/Bureau/Github/Mathone/Images*.eps
 
 all: $(title).tex
 
@@ -32,9 +31,6 @@ full:
 	pdflatex $(title).tex
 	pdflatex $(title).tex
 	
-
-
-
 foo :
 	for i in $(chapters); do \
 		echo $$i ; \

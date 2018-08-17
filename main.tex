@@ -1,10 +1,51 @@
+% !TeX spellcheck = it_IT
+% !TEX encoding = utf8
+% !TEX root = main.tex
+
 \documentclass[parskip=half,
 	fontsize=9pt,
 	% chapterprefix=true,
 	numbers=noenddot,
 	bibliography=totoc]{scrbook}
 
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\scr@startchapter}{\if@openright\cleardoublepage\else\clearpage\fi}{}{}{}
+\makeatother
+
 \include{Config/config}
+
+\theoremstyle{definition}
+\newtheorem{defn}{Definition}[section]
+\theoremstyle{plain}
+\newtheorem{thm}{Theorem}[section]
+\newtheorem{prop}{Proposition}[section]
+\newtheorem{cor}{Corollary}[section]
+\newtheorem{lmm}{Lemma}[section]
+\theoremstyle{remark}
+\newtheorem*{recall}{Recall}
+\newtheorem*{example}{Example}
+\newtheorem*{remark}{Remark}
+
+\usepackage{hyperref}
+\title{Mathone - Versione originale}
+\author{Erik Pillon}
+\date{\today}
+% ----------------------- BODY ------------------------
 \begin{document}
-% To include all the chapters
+\maketitle
+\tableofcontents
+\include{Front-Back_Matter/premessa}
+
+\include{Chapters/Gauss}
+\include{Chapters/Galois}
+\include{Chapters/ponti}
+\include{Chapters/Nobel}
+\include{Chapters/algoritmo}
+\include{Chapters/turbolenza}
+\include{Chapters/millenium_problems}
+\include{Chapters/Villani}
+
+\bibliography{bibliography}
+
 \end{document}
